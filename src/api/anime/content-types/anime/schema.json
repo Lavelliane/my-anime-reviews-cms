@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animes",
+  "info": {
+    "singularName": "anime",
+    "pluralName": "animes",
+    "displayName": "anime",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "season": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "romance",
+        "shounen",
+        "comedy",
+        "psychological",
+        "slice of life",
+        "shoujo",
+        "isekai",
+        "others"
+      ]
+    },
+    "alt": {
+      "type": "string"
+    },
+    "episodes": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "Anime"
+    },
+    "synopsis": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
